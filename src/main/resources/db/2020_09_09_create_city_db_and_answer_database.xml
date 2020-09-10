@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet runOnChange="true" id="2020_09_09_create_city_db_and_answer_database.xml" author="Maksim Lapo">
+        <sql>CREATE TABLE `cities` (
+            `id` INT NOT NULL AUTO_INCREMENT,
+            `city_name` varchar(255) NOT NULL UNIQUE,
+            PRIMARY KEY (`id`)
+            );
+
+            CREATE TABLE `city_answers` (
+            `id` INT NOT NULL AUTO_INCREMENT,
+            `answerEntity` varchar(255) NOT NULL,
+            `city_id` INT(255) NOT NULL,
+            PRIMARY KEY (`id`)
+            );
+
+            ALTER TABLE `city_answers` ADD CONSTRAINT `city_answers_fk0` FOREIGN KEY (`city_id`) REFERENCES `cities`(`id`);
+        </sql>
+
+    </changeSet>
+</databaseChangeLog>
