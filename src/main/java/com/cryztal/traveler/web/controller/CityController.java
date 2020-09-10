@@ -37,4 +37,14 @@ public class CityController {
     public void editCity(@PathVariable("cityId") Integer id, @RequestParam("cityName") String cityName) {
         cityService.editCity(id, cityName);
     }
+
+    @DeleteMapping("/city/{cityId}")
+    public void deleteCityById(@PathVariable("cityId") Integer id) {
+        cityService.deleteByCityId(id);
+    }
+
+    @DeleteMapping("/city")
+    public void deleteCityById(@RequestParam("cityName") String cityName) {
+        cityService.deleteByCityName(cityName);
+    }
 }

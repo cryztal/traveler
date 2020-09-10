@@ -12,7 +12,7 @@
 
             CREATE TABLE `city_answers` (
             `id` INT NOT NULL AUTO_INCREMENT,
-            `answerEntity` varchar(255) NOT NULL,
+            `answer` varchar(255) NOT NULL,
             `city_id` INT(255) NOT NULL,
             PRIMARY KEY (`id`)
             );

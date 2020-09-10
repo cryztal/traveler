@@ -39,7 +39,7 @@ public class CityEntity {
     @Column(name = "city_name")
     private String cityName;
 
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "city_id")
+    @OneToMany(mappedBy = "cityEntity",
+            fetch = FetchType.EAGER)
     private List<AnswerEntity> answerEntities;
 }

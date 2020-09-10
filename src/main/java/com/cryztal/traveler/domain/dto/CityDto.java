@@ -6,7 +6,15 @@ public class CityDto {
 
     private String cityName;
 
-    private List<AnswerDto> answers;
+    private List<AnswerDto> answerDto;
+
+    public List<AnswerDto> getAnswerDto() {
+        return answerDto;
+    }
+
+    public void setAnswerDto(List<AnswerDto> answerDto) {
+        this.answerDto = answerDto;
+    }
 
     public String getCityName() {
         return cityName;
@@ -16,11 +24,4 @@ public class CityDto {
         this.cityName = cityName;
     }
 
-    public List<AnswerDto> getAnswers() {
-        return answers;
-    }
-
-    public void setAnswers(List<AnswerDto> answers) {
-        this.answers = answers;
-    }
 }

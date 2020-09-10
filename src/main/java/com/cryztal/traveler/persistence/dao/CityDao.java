@@ -15,4 +15,8 @@ public interface CityDao {
     List<CityEntity> findAll();
 
     void saveOrUpdate(CityEntity cityEntity);
+
+    void deleteCityById(Integer id);
+
+    void deleteCityByCityName(String cityName);
 }

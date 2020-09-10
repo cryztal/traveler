@@ -53,4 +53,14 @@ public class CityServiceImpl implements CityService {
         cityEntity.setCityName(cityName);
         cityDao.saveOrUpdate(cityEntity);
     }
+
+    @Override
+    public void deleteByCityId(Integer id) {
+        cityDao.deleteCityById(id);
+    }
+
+    @Override
+    public void deleteByCityName(String cityName) {
+        cityDao.deleteCityByCityName(cityName);
+    }
 }

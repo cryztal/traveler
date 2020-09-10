@@ -14,7 +14,8 @@ public class CityDaoImpl extends BaseDaoImpl implements CityDao {
     @Override
     public Optional<CityEntity> findByCityName(String cityName) {
         Session session = getSession();
-        return session.createQuery("from City c where c.cityName = :cityName", CityEntity.class)
+        return session.createQuery("from CityEntity c " +
+                "where c.cityName = :cityName ", CityEntity.class)
                 .setParameter("cityName", cityName)
                 .uniqueResultOptional();
     }
@@ -22,7 +23,8 @@ public class CityDaoImpl extends BaseDaoImpl implements CityDao {
     @Override
     public Optional<CityEntity> findById(Integer id) {
         Session session = getSession();
-        return session.createQuery("from City c where c.id = :id", CityEntity.class)
+        return session.createQuery("from CityEntity c " +
+                "where c.id = :id", CityEntity.class)
                 .setParameter("id", id)
                 .uniqueResultOptional();
     }
@@ -30,14 +32,30 @@ public class CityDaoImpl extends BaseDaoImpl implements CityDao {
     @Override
     public List<CityEntity> findAll() {
         Session session = getSession();
-        return session.createQuery("from City c", CityEntity.class)
-                .list();
+        return session.createQuery("from CityEntity c " + " ", CityEntity.class)
+                .getResultList();
     }
 
     @Override
     public void saveOrUpdate(CityEntity cityEntity) {
         Session session = getSession();
         session.saveOrUpdate(cityEntity);
+    }
+
+    @Override
+    public void deleteCityById(Integer id) {
+        Session session = getSession();
+        session.createQuery("delete from CityEntity c where c.id=:id")
+                .setParameter("id", id)
+                .executeUpdate();
+    }
+
+    @Override
+    public void deleteCityByCityName(String cityName) {
+        Session session = getSession();
+        session.createQuery("delete from CityEntity c where c.cityName=:cityName")
+                .setParameter("cityName", cityName)
+                .executeUpdate();
     }
 
 }

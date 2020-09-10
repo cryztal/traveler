@@ -17,6 +17,9 @@ public interface CityService {
 
     void addCity(String cityName);
 
-
     void editCity(Integer id, String cityName);
+
+    void deleteByCityId(Integer id);
+
+    void deleteByCityName(String cityName);
 }

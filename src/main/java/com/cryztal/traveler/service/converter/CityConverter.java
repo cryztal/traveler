@@ -1,5 +1,6 @@
 package com.cryztal.traveler.service.converter;
 
+import com.cryztal.traveler.domain.dto.AnswerDto;
 import com.cryztal.traveler.domain.dto.CityDto;
 import com.cryztal.traveler.domain.entity.CityEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +14,10 @@ public class CityConverter {
     @Autowired
     private AnswerConverter answerConverter;
 
-    public CityDto convert(CityEntity cityEntity){
+    public CityDto convert(CityEntity cityEntity) {
         CityDto cityDto = new CityDto();
         cityDto.setCityName(cityEntity.getCityName());
-        cityDto.setAnswers(cityEntity.getAnswers().stream().map(answerConverter::convert).collect(Collectors.toList()));
+        cityDto.setAnswerDto(cityEntity.getAnswers().stream().map(answerConverter::convert).collect(Collectors.toList()));
         return cityDto;
     }
 }
