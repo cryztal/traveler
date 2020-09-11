@@ -10,7 +10,6 @@ public class AnswerConverter {
     public AnswerDto convert(AnswerEntity answerEntity){
         AnswerDto answerDto = new AnswerDto();
         answerDto.setAnswer(answerEntity.getAnswer());
-        //answerDto.setCity(answerEntity.getCity().getCityName());
         return answerDto;
     }
 }

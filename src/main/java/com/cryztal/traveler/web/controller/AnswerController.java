@@ -26,12 +26,7 @@ public class AnswerController {
         answerService.deleteByAnswerId(id);
     }
 
-    @DeleteMapping(value = "/answers", params = "{cityId}")
-    public void deleteAnswersByCityId(@RequestParam("cityId") Integer cityId) {
-        answerService.deleteByCityId(cityId);
-    }
-
-    @DeleteMapping(value = "/answers", params = "{cityName}")
+    @DeleteMapping(value = "/answers")
     public void deleteAnswersByCityName(@RequestParam("cityName") String cityName) {
         answerService.deleteByCityName(cityName);
     }

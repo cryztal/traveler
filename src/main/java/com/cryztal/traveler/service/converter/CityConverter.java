@@ -1,6 +1,5 @@
 package com.cryztal.traveler.service.converter;
 
-import com.cryztal.traveler.domain.dto.AnswerDto;
 import com.cryztal.traveler.domain.dto.CityDto;
 import com.cryztal.traveler.domain.entity.CityEntity;
 import org.springframework.beans.factory.annotation.Autowired;
