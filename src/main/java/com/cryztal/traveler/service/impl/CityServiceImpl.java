@@ -6,12 +6,18 @@ import com.cryztal.traveler.persistence.dao.CityDao;
 import com.cryztal.traveler.service.CityService;
 import com.cryztal.traveler.service.converter.CityConverter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.stereotype.Service;
+import org.telegram.telegrambots.ApiContextInitializer;
+import org.telegram.telegrambots.meta.TelegramBotsApi;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class CityServiceImpl implements CityService {
 
     @Autowired
